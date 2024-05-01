@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "palaeo",
+    "password": "palaeo",
+    "database": "palaeo",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "underscored": true
+    }
+  },
+  "test": {
+    "username": "palaeo",
+    "password": "palaeo",
+    "database": "palaeo",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "palaeo",
+    "password": null,
+    "database": "palaeo",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

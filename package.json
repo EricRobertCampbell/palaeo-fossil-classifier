@@ -1,0 +1,29 @@
+{
+  "name": "palaeo-fossil-classifier",
+  "repository": "git@github.com:EricRobertCampbell/palaeo-fossil-classifier.git",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "15.6.1",
+    "@typescript-eslint/eslint-plugin": "4.25.0",
+    "@typescript-eslint/parser": "4.25.0",
+    "eslint": "7.27.0",
+    "markdown-magic": "2.0.0",
+    "markdown-magic-package-json": "2.0.2",
+    "markdown-magic-package-scripts": "1.2.1",
+    "markdown-magic-subpackage-list": "1.1.1",
+    "stylelint": "13.13.1",
+    "stylelint-config-standard": "22.0.0"
+  },
+  "scripts": {
+    "lint": "yarn workspaces foreach -Apv run lint --color",
+    "lint:styles": "stylelint **/*.css",
+    "test": "yarn workspaces foreach -Apv run test --colors --verbose=false --silent",
+    "dev": "yarn workspaces foreach -Apvi run dev",
+    "build": "yarn workspaces foreach -Apvi run build",
+    "build:docs": "md-magic --path '**/*.md' --ignore='node_modules'"
+  },
+  "packageManager": "yarn@4.1.1"
+}
