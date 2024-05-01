@@ -20,6 +20,7 @@ import Seed, { ISeed } from './fixtures/Seed';
 import User from './model/User';
 import Sample from './model/Sample';
 import Classification from './model/Classification';
+import UserService, { IUserService } from './service/UserService';
 
 export default function setup(app: Container) {
 
@@ -48,6 +49,7 @@ export default function setup(app: Container) {
   app.bind<IGraphBuilder>('CommonGraph').to(CommonGraph);
   app.bind<ILogService>('ILogService').to(LogService);
   app.bind<IPubSubService>('IPubSubService').to(PubSubService);
+  app.bind<IUserService>('IUserService').to(UserService);
   app.bind<ISeed>('ISeed').to(Seed);
   
   app.bind<Logger>('LoggerConsole').to(LoggerConsole);
