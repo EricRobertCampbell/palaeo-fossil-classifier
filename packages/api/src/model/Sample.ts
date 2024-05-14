@@ -10,7 +10,8 @@ export default class Sample extends Model<InferAttributes<Sample>, InferCreation
   static initialize(sequelize, DataTypes = _DataTypes) {
     Sample.init({
       id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
       },
       imageUrl: DataTypes.STRING,

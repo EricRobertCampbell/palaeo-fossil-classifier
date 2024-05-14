@@ -1,95 +1,34 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import CustomLink from "@/components/custom-link";
+import Layout from "@/components/layout";
+import { auth } from "auth";
 
-export default function Home() {
+export default async function Index() {
+  const session = await auth();
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex flex-col gap-6">
+      <h1 className="text-3xl font-bold">NextAuth.js Example</h1>
+      <div>
+        This is an example site to demonstrate how to use{" "}
+        <CustomLink href="https://nextjs.authjs.dev">NextAuth.js</CustomLink>{" "}
+        for authentication. Check out the{" "}
+        <CustomLink href="/server-example" className="underline">
+          Server
+        </CustomLink>{" "}
+        and the{" "}
+        <CustomLink href="/client-example" className="underline">
+          Client
+        </CustomLink>{" "}
+        examples to see how to secure pages and get session data.
+      </div>
+      <div className="flex flex-col rounded-md bg-neutral-100">
+        <div className="p-4 font-bold rounded-t-md bg-neutral-200">
+          Current Session
         </div>
+        <pre className="py-6 px-4 whitespace-pre-wrap break-all">
+          {JSON.stringify(session, null, 2)}
+        </pre>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }

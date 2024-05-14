@@ -17,7 +17,8 @@ export default class Classification extends Model<InferAttributes<Classification
   static initialize(sequelize, DataTypes = _DataTypes) {
     Classification.init({
       id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
       },
       createdAt: DataTypes.DATE,

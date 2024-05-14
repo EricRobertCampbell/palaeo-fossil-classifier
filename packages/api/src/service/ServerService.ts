@@ -11,31 +11,30 @@ import { PORT } from '../settings';
 
 import { ILogService } from './LogService';
 import { IGraphBuilder } from '../graphql/IGraphBuilder';
+import { ISessionService } from './SessionService';
 
 interface MyContext {
-  token?: String;
+  token?: string;
 }
 
 export interface IServerService {
   start(): Promise<any>;
 }
 
-interface ConnectionParmas {
-  id: string;
-  name: string;
-}
-
 @injectable()
 export default class ServerService implements IServerService {
   private rootGraph: IGraphBuilder;
   private log: ILogService;
+  private sessionService: ISessionService;
 
   constructor(
     @inject("RootGraph") rootGraph: IGraphBuilder,
     @inject("ILogService") log: ILogService,
+    @inject("ISessionService") sessionService: ISessionService,
   ) {
     this.rootGraph = rootGraph;
     this.log = log;
+    this.sessionService = sessionService;
   }
 
   async start() {
@@ -79,9 +78,14 @@ export default class ServerService implements IServerService {
       cors<cors.CorsRequest>(),
       express.json(),
       expressMiddleware(server, {
-        // context: async ({ req }) => { 
-        //   return { token: req.headers.token };
-        // },
+        context: async ({ req }) => { 
+          if (req.headers.authorization) {
+            return {
+              session: await this.sessionService.getByToken(req.headers.authorization),
+            };
+          }
+          return {};
+        },
       }),
     );
     await new Promise<void>((resolve) => httpServer.listen({ port: PORT }, () => {

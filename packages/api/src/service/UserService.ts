@@ -2,9 +2,11 @@ import _User from '../model/User';
 import { inject, injectable } from 'inversify';
 import "reflect-metadata";
 import { FindOptions } from 'sequelize/types';
+import UserRole from '../model/UserRole';
 
 export interface IUserService {
-  getById(id: number): Promise<any>;
+  get(id: string, email: string): Promise<any>;
+  getById(id: string): Promise<any>;
   getAll(): Promise<any>;
   create(data: any): Promise<any>;
   remove(id: number): Promise<any>;
@@ -21,8 +23,17 @@ export default class UserService implements IUserService {
     this.User = User;
   }
 
-  async getById(id: number) {
-    return {};
+  async get(id: string, email: string) {
+    return this.User.findOne({
+      where: {
+        ...(id ? { id } : {}),
+        ...(email ? { email } : {}),
+      }
+    });
+  }
+
+  async getById(id: string) {
+    return this.User.findByPk(id);
   }
 
   async search(options?: FindOptions<any>) {
@@ -30,7 +41,15 @@ export default class UserService implements IUserService {
   }
   
   async getAll() {
-    return this.User.findAll({ order: [['createdAt', 'DESC']] });
+    return this.User.findAll({
+      include: [
+        {
+          model: UserRole,
+          as: 'roles',
+        }
+      ],
+      order: [['createdAt', 'DESC']],
+    });
   }
   
   async create(data) {

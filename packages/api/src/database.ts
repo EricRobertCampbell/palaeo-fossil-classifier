@@ -1,11 +1,14 @@
 import { Sequelize } from 'sequelize';
 import {
+  DATABASE_DIALECT,
   DATABASE_USERNAME,
   DATABASE_PASSWORD,
   DATABASE_HOST,
   DATABASE_NAME,
   DATABASE_LOGGING_ENABLED,
+  DATABASE_STORAGE,
 } from './settings';
+import { Dialect } from 'sequelize';
 
 const regex = /\): (\w+)(?: FROM|.*?)"([^"]*)/i
 const logging = (sql: string, timingMs?: number) => {
@@ -20,10 +23,12 @@ const logging = (sql: string, timingMs?: number) => {
   }
 
 }
+console.log('DATABASE_DIALECT', DATABASE_DIALECT, DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_HOST);
 
 const sequelize = new Sequelize(DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, {
   host: DATABASE_HOST,
-  dialect: 'postgres',
+  dialect: DATABASE_DIALECT as Dialect,
+  storage: DATABASE_STORAGE,
   pool: {
     max: 20,
     min: 0,
