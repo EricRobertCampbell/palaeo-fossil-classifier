@@ -12,10 +12,10 @@ export const PORT = env.get(`${ENV_PREFIX}PORT`).default(3001).asString();
 
 export const DATABASE_DIALECT = env.get(`${ENV_PREFIX}DATABASE_DIALECT`).required().asString();
 export const DATABASE_STORAGE = env.get(`${ENV_PREFIX}DATABASE_STORAGE`).default('../../database.sqlite').asString();
-export const DATABASE_USERNAME = env.get(`${ENV_PREFIX}DATABASE_USERNAME`).required().asString();
-export const DATABASE_PASSWORD = env.get(`${ENV_PREFIX}DATABASE_PASSWORD`).required().asString();
-export const DATABASE_HOST = env.get(`${ENV_PREFIX}DATABASE_HOST`).required().asString();
-export const DATABASE_NAME = env.get(`${ENV_PREFIX}DATABASE_NAME`).required().asString();
+export const DATABASE_USERNAME = env.get(`${ENV_PREFIX}DATABASE_USERNAME`).asString();
+export const DATABASE_PASSWORD = env.get(`${ENV_PREFIX}DATABASE_PASSWORD`).asString();
+export const DATABASE_HOST = env.get(`${ENV_PREFIX}DATABASE_HOST`).asString();
+export const DATABASE_NAME = env.get(`${ENV_PREFIX}DATABASE_NAME`).asString();
 export const DATABASE_LOGGING_ENABLED = env.get(`${ENV_PREFIX}DATABASE_LOGGING_ENABLED`).default(`${ IS_DEVELOPMENT }`).asBool();
 
 export const SESSION_SECRET = env.get(`${ENV_PREFIX}SESSION_SECRET`).default('keyboard cat').asString();

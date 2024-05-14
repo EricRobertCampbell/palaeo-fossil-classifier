@@ -16,10 +16,10 @@ export const API_ENDPOINT = env.get(`${ ENV_PREFIX }API_ENDPOINT`).default('loca
 
 export const DATABASE_DIALECT = env.get('DATABASE_DIALECT').required().asString();
 export const DATABASE_STORAGE = env.get('DATABASE_STORAGE').default('../../database.sqlite').asString();
-export const DATABASE_USERNAME = env.get('DATABASE_USERNAME').required().asString();
-export const DATABASE_PASSWORD = env.get('DATABASE_PASSWORD').required().asString();
-export const DATABASE_HOST = env.get('DATABASE_HOST').required().asString();
-export const DATABASE_NAME = env.get('DATABASE_NAME').required().asString();
+export const DATABASE_USERNAME = env.get('DATABASE_USERNAME').asString();
+export const DATABASE_PASSWORD = env.get('DATABASE_PASSWORD').asString();
+export const DATABASE_HOST = env.get('DATABASE_HOST').asString();
+export const DATABASE_NAME = env.get('DATABASE_NAME').asString();
 
 // Expose so package 'next-runtime-env' can pick them up and send them to client side
 process.env['NEXT_PUBL' + 'IC_NODE_ENV'] = NODE_ENV;
