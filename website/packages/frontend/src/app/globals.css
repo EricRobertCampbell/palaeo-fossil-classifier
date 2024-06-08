@@ -1,0 +1,13 @@
+
+body {
+    margin: 0;
+    padding: var(--space-4);
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
