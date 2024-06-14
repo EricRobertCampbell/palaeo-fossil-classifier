@@ -1,20 +1,26 @@
 {
-  "name": "palaeo-fossil-classifier",
-  "repository": "git@github.com:EricRobertCampbell/palaeo-fossil-classifier.git",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "lint": "yarn workspaces foreach -Apv run lint --color",
-    "lint:styles": "stylelint **/*.css",
-    "test": "yarn workspaces foreach -Apv run test --colors --verbose=false --silent",
-    "dev": "yarn workspaces foreach -Apvi run dev",
-    "build": "yarn workspaces foreach -Apvi run build",
-    "build:docs": "md-magic --path '**/*.md' --ignore='node_modules'"
-  },
-  "packageManager": "yarn@4.1.1",
-  "dependencies": {
-    "pg-hstore": "^2.3.4"
-  }
+    "name": "palaeo-fossil-classifier",
+    "repository": "git@github.com:EricRobertCampbell/palaeo-fossil-classifier.git",
+    "private": true,
+    "workspaces": ["packages/*"],
+    "scripts": {
+        "lint": "yarn workspaces foreach -Apv run lint --color",
+        "lint:styles": "stylelint **/*.css",
+        "test": "yarn workspaces foreach -Apv run test --colors --verbose=false --silent",
+        "dev": "yarn workspaces foreach -Apvi run dev",
+        "build": "yarn workspaces foreach -Apvi run build",
+        "build:docs": "md-magic --path '**/*.md' --ignore='node_modules'",
+        "prepare": "cd .. && husky website/.husky"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": ["prettier --write"]
+    },
+    "packageManager": "yarn@4.1.1",
+    "dependencies": {
+        "pg-hstore": "^2.3.4"
+    },
+    "devDependencies": {
+        "lint-staged": "^15.2.7",
+        "prettier": "^3.3.2"
+    }
 }
