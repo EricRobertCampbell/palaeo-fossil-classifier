@@ -1,11 +1,11 @@
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "@psidox/api/*": ["./packages/api/*"],
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "@psidox/api/*": ["./packages/api/*"]
+        }
     }
-  }
 }

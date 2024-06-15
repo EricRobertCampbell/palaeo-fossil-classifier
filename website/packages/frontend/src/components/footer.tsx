@@ -1,9 +1,5 @@
-import CustomLink from "./custom-link"
+import CustomLink from './custom-link'
 
 export default function Footer() {
-  return (
-    <>
-      
-    </>
-  );
+    return <></>
 }

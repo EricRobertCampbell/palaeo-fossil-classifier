@@ -1,6 +1,6 @@
 export enum LogType {
-  TRACE = 'TRACE',
-  INFO = 'INFO',
-  WARN = 'WARN',
-  ERROR = 'ERROR',
+    TRACE = 'TRACE',
+    INFO = 'INFO',
+    WARN = 'WARN',
+    ERROR = 'ERROR',
 }

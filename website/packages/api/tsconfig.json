@@ -1,17 +1,14 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "target": "ES2022",
-    "outDir": "dist",
-    "lib": ["ES2022", "DOM"],
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true
-  },
-  "exclude": [
-    "dist",
-    "*.config.js"
-  ]
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "target": "ES2022",
+        "outDir": "dist",
+        "lib": ["ES2022", "DOM"],
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true
+    },
+    "exclude": ["dist", "*.config.js"]
 }

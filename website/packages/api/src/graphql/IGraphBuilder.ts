@@ -1,3 +1,3 @@
 export interface IGraphBuilder {
-  build(): any;
+    build(): any
 }

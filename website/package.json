@@ -2,7 +2,9 @@
     "name": "palaeo-fossil-classifier",
     "repository": "git@github.com:EricRobertCampbell/palaeo-fossil-classifier.git",
     "private": true,
-    "workspaces": ["packages/*"],
+    "workspaces": [
+        "packages/*"
+    ],
     "scripts": {
         "lint": "yarn workspaces foreach -Apv run lint --color",
         "lint:styles": "stylelint **/*.css",
@@ -13,7 +15,9 @@
         "prepare": "cd .. && husky website/.husky"
     },
     "lint-staged": {
-        "*.{js,jsx,ts,tsx}": ["prettier --write"]
+        "*.{js,jsx,ts,tsx}": [
+            "prettier --write"
+        ]
     },
     "packageManager": "yarn@4.1.1",
     "dependencies": {

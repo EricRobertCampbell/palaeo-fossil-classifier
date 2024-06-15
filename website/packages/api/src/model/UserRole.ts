@@ -1,40 +1,53 @@
-import { CreationOptional, ForeignKey, InferAttributes, InferCreationAttributes, Model, NonAttribute, DataTypes as _DataTypes } from 'sequelize';
-import Role from './Role';
-import User from './User';
+import {
+    CreationOptional,
+    ForeignKey,
+    InferAttributes,
+    InferCreationAttributes,
+    Model,
+    NonAttribute,
+    DataTypes as _DataTypes,
+} from 'sequelize'
+import Role from './Role'
+import User from './User'
 
-export default class UserRole extends Model<InferAttributes<UserRole>, InferCreationAttributes<UserRole>> {
-  declare public id: CreationOptional<string>;
+export default class UserRole extends Model<
+    InferAttributes<UserRole>,
+    InferCreationAttributes<UserRole>
+> {
+    public declare id: CreationOptional<string>
 
-  declare public userId: ForeignKey<User['id']>;
-  declare public user?: NonAttribute<User>;
+    public declare userId: ForeignKey<User['id']>
+    public declare user?: NonAttribute<User>
 
-  declare public roleId: ForeignKey<Role['id']>;
-  declare public role?: NonAttribute<Role>;
+    public declare roleId: ForeignKey<Role['id']>
+    public declare role?: NonAttribute<Role>
 
-  declare public createdAt: CreationOptional<Date>;
-  declare public updatedAt: CreationOptional<Date>;
-  
-  static initialize(sequelize, DataTypes = _DataTypes) {
-    UserRole.init({
-      id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-      },
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE,
-    }, {
-      sequelize,
-      defaultScope: {
-        attributes: [
-          'id',
-          'userId',
-          'roleId',
-          'createdAt',
-          'updatedAt'
-        ],
-      },
-    });    
-  }
+    public declare createdAt: CreationOptional<Date>
+    public declare updatedAt: CreationOptional<Date>
+
+    static initialize(sequelize, DataTypes = _DataTypes) {
+        UserRole.init(
+            {
+                id: {
+                    type: DataTypes.INTEGER,
+                    autoIncrement: true,
+                    primaryKey: true,
+                },
+                createdAt: DataTypes.DATE,
+                updatedAt: DataTypes.DATE,
+            },
+            {
+                sequelize,
+                defaultScope: {
+                    attributes: [
+                        'id',
+                        'userId',
+                        'roleId',
+                        'createdAt',
+                        'updatedAt',
+                    ],
+                },
+            }
+        )
+    }
 }
-
