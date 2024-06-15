@@ -34,7 +34,7 @@ jobs:
     #       run: |
     #         npm run test
 
-    lint:
+    lint-website:
         runs-on: ubuntu-latest
 
         steps:
@@ -53,6 +53,7 @@ jobs:
 
             - name: Lint
               run: |
+                  cd website
                   npx prettier --write .
 
             - name: See if changes were made
