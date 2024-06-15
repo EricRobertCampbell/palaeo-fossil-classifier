@@ -1,0 +1,32 @@
+on:
+    push:
+        branches:
+            - 'main'
+        paths:
+            - website/**
+        paths-ignore:
+            - CHANGELOG.md
+
+jobs:
+    semantic-versioning:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0 # gives access to all previous commits
+                  # token: ${{ secrets.SEMANTIC_VERSIONING_KEY }} # for protected branches
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: '16'
+            - name: Update version
+              run: |
+                  git config --local user.email "github-actions[bot]@users.noreply.github.com"
+                  git config --local user.name "github-actions[bot]"
+                  cd website
+                  npx standard-version
+            - name: Push changes
+              uses: ad-m/github-push-action@master
+              with:
+                  # github_token: ${{ secrets.SEMANTIC_VERSIONING_KEY }} # for protected branches
+                  branch: ${{ github.ref }}
