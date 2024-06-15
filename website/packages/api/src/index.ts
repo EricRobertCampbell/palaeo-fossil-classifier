@@ -26,7 +26,6 @@ if (DEBUG_INVERSIFY_LOGGER) {
     container.applyMiddleware(makeLoggerMiddleware())
 }
 inject(container)
-
 ;(async () => {
     // await sequelize.drop();
     // Note - Super slow with lots of entries
