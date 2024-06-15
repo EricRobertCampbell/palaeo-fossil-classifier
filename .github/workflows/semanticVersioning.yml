@@ -5,10 +5,13 @@ on:
         paths:
             - website/**
         paths-ignore:
-            - CHANGELOG.md
+            - website/CHANGELOG.md
+
+permissions:
+    contents: write
 
 jobs:
-    semantic-versioning:
+    semantic-versioning-website:
         runs-on: ubuntu-latest
         steps:
             - name: checkout
