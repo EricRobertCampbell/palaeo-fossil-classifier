@@ -1,0 +1,6 @@
+.login{
+    display: grid;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: auto;
+}

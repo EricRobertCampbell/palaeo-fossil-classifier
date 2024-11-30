@@ -31,7 +31,7 @@
   height: 50px;
   background-color: white;
   margin: 20px;
-  color: #121212;
+  color: #568fa6;
   position: relative;
   overflow: hidden;
   font-size: 14px;
@@ -52,7 +52,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #8b0000;
+  background-color: #44d8a4;
   transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
@@ -83,7 +83,7 @@
   position: absolute;
   width: 2px;
   height: 0;
-  background-color: #8b0000;
+  background-color: #44d8a4;
   transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
@@ -124,7 +124,7 @@
 .buttons button p:after {
   content: attr(data-text);
   top: 150%;
-  color: #8b0000;
+  color: #44d8a4;
 }
 
 .buttons button:hover:before, .buttons button:hover:after {

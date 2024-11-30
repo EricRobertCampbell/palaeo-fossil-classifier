@@ -124,7 +124,7 @@
 .buttons button p:after {
   content: attr(data-text);
   top: 150%;
-  color: #8b0000;
+  color: #44d8a4;
 }
 
 .buttons button:hover:before, .buttons button:hover:after {
