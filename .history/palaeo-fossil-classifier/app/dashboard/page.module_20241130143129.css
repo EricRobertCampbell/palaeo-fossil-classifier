@@ -1,0 +1,32 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+.area{
+    display: inline;
+}
+
+.button{
+    font-family: Helvetica;
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+
+.area {
+float: left;
+background: #e2e2e2;
+width: 50%;
+height: 50%;
+}
+
+.component{
+    display: inline;
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}

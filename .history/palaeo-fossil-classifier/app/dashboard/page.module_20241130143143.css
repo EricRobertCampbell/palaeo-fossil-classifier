@@ -1,0 +1,24 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+.area{
+    display: inline;
+}
+
+.button{
+    font-family: Helvetica;
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+.area {
+float: left;
+background: #e2e2e2;
+width: 50%;
+height: 50%;
+}
+
+.component{
+    display: inline;
+}

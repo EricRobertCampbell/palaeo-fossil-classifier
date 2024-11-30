@@ -1,0 +1,5 @@
+.login{
+    display: grid;
+    flex-wrap: wrap;
+    align-items: center;
+}
