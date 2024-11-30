@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+
+import { getUsers } from "./actions/getUsers";
+import { addUsers } from "./actions/addUser";
 
 export default function Home() {
   return (
@@ -13,13 +18,33 @@ export default function Home() {
           height={38}
           priority
         />
+        <button
+          onClick={async () => {
+            const data = await getUsers();
+            console.log({ data });
+          }}
+        >
+          Get Users
+        </button>
+        <button
+          onClick={async () => {
+            const created = await addUsers({
+              name: "test name",
+              age: 4,
+              email: "something@test.com",
+            });
+            console.log({ created });
+          }}
+        >
+          add user
+        </button>
         <ol>
           <li>
             Get started by editing <code>app/page.tsx</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-
+        jk
         <div className={styles.ctas}>
           <a
             className={styles.primary}
