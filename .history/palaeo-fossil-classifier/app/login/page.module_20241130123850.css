@@ -1,0 +1,19 @@
+.login{
+
+}
+
+.title{
+    text-align: center;
+    padding-top: 3rem;
+    color: #8b0000;
+}
+
+.form{
+    display: grid;
+    align-items: center;
+    padding: 5rem;
+}
+
+.button{
+
+}
