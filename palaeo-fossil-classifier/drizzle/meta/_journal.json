@@ -8,6 +8,13 @@
       "when": 1733003512632,
       "tag": "0000_dizzy_grim_reaper",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1733006533196,
+      "tag": "0001_silky_silver_fox",
+      "breakpoints": true
     }
   ]
 }

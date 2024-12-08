@@ -1,29 +1,29 @@
-import React from "react";
 import styles from "./page.module.css";
+import { addUser } from "../actions/addUser";
 
-export default function classify() {
+export default function Register() {
   return (
     <div className={styles.login}>
       <h1 className={styles.title}>Register</h1>
-      <div className={styles.form}>
+      <form action={addUser} className={styles.form}>
         <input
           className={styles.input}
           type="text"
           placeholder="Username"
-          name="un"
+          name="email"
         />
         <input
           className={styles.input}
           type="password"
           placeholder="Password"
-          name="pw"
+          name="password"
         />
         <button className={styles.button}> Register </button>
-        <a href="./login">
-          {" "}
-          <button className={styles.button2}> Have an account? Login </button>
-        </a>
-      </div>
+      </form>
+      <a href="./login">
+        {" "}
+        <button className={styles.button2}> Have an account? Login </button>
+      </a>
     </div>
   );
 }

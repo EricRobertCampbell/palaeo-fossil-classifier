@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+.history
 
 # debug
 npm-debug.log*
@@ -38,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# misc
+uploads/

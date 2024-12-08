@@ -2,8 +2,10 @@
 import React from "react";
 import styles from "./page.module.css";
 import { useState } from "react";
-import Admin from "../admin";
-import Classify from "../classify";
+// import Admin from "../admin";
+// import Classify from "../classify";
+import Admin from "../upload/page";
+import Classify from "../classify/page";
 
 export default function dashboard() {
   const [component1, setComponent1] = useState(false);

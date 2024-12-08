@@ -17,9 +17,11 @@ export default function Classify() {
       <ClassifyImage
         image={image}
         onImageSelection={async () => {
-          console.log("onImageSelection");
-          const image = await getRandomImage();
-          setImage(image);
+          setTimeout(async () => {
+            console.log("onImageSelection");
+            const image = await getRandomImage();
+            setImage(image);
+          }, 2000);
         }}
       />
     );
@@ -37,6 +39,10 @@ function ClassifyImage({ image, onImageSelection }) {
       const base64 = await getImageData(image.id);
       setBase64(base64);
     })();
+  }, [image.id]);
+
+  useEffect(() => {
+    setCorrect(undefined);
   }, [image.id]);
 
   if (base64) {
