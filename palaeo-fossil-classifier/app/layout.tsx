@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
-
+import logo from "../public/logo.png";
+import Image from "next/image";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -26,14 +27,6 @@ const navComponents = [
     href: "/dashboard",
   },
   {
-    title: "Classify",
-    href: "/classify",
-  },
-  {
-    title: "Upload",
-    href: "/upload",
-  },
-  {
     title: "Login",
     href: "/login",
   },
@@ -44,22 +37,31 @@ const navComponents = [
 ];
 const NavComponent = () => {
   return (
-    <nav>
-      <ol style={{ listStyleType: "none", marginBottom: "20px" }}>
-        {navComponents.map((component) => {
-          return (
-            <li
-              style={{
-                display: "inline-block",
-                margin: "4px",
-                fontSize: "2rem",
-              }}
-            >
-              <Link href={component.href}>{component.title}</Link>
-            </li>
-          );
-        })}
-      </ol>
+    <nav className="nav">
+      <Link href={navComponents[0].href}>
+        <Image
+          src={logo}
+          alt="logo"
+          width={60}
+          height={60}
+          style={{ borderRadius: 20 }}
+        />
+      </Link>
+      <ul className="list">
+        <li>
+          <Link href={navComponents[0].href}>{navComponents[0].title}</Link>
+        </li>
+        <li>
+          <Link href={navComponents[1].href}>{navComponents[1].title}</Link>
+        </li>
+        <li>
+          <Link href={navComponents[2].href}>{navComponents[2].title}</Link>
+        </li>
+        <li>
+          <Link href={navComponents[3].href}>{navComponents[3].title}</Link>
+        </li>
+      </ul>
+      <button className="menu">Menu</button>
     </nav>
   );
 };
