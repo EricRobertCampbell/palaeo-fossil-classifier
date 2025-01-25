@@ -14,17 +14,23 @@ export default function Page() {
         <label htmlFor="file-input" className={styles.dropcontainer}>
           <span className={styles.droptitle}>Drop files here</span>
           or
-          <input type="file" accept="image/*" required id={styles.fileinput} />
+          <input
+            type="file"
+            accept="image/*"
+            name="file"
+            required
+            className={styles.fileinput}
+          />
         </label>
         <div className={styles.mydict}>
           <h2 className={styles.formtitle2}>Classification</h2>
           <div>
             <label className={styles.ll}>
-              <input type="radio" name="radio" value="Rock" />
+              <input type="radio" name="classification" required value="rock" />
               <span>Rock</span>
             </label>
             <label className={styles.ll}>
-              <input type="radio" name="radio" value="Fossil" />
+              <input type="radio" name="classification" value="fossil" />
               <span>Fossil</span>
             </label>
           </div>

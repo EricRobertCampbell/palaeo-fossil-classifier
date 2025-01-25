@@ -7,6 +7,7 @@ export async function uploadFile(f: FormData) {
 	console.log({ f });
 	await fs.mkdir("./uploads", { recursive: true });
 	const file = f.get("file") as File;
+	console.log({ file });
 	const uploadPath = `./uploads/${file.name}`;
 	const classification = f.get("classification") as string;
 	const fileBuffer = Buffer.from(await file.arrayBuffer());
@@ -14,6 +15,4 @@ export async function uploadFile(f: FormData) {
 	await db
 		.insert(imagesTable)
 		.values({ filename: uploadPath, classification });
-	console.log("done");
-	return "test";
 }

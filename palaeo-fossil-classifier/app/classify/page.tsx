@@ -68,6 +68,7 @@ function ClassifyImage({ image, onImageSelection }) {
         ) : null}
         <button
           onClick={async () => {
+            console.log("Click rock");
             setCorrect(image.classification === "rock");
             await classifyImage({
               imageId: image.id,
@@ -77,10 +78,11 @@ function ClassifyImage({ image, onImageSelection }) {
             await onImageSelection();
           }}
         >
-          Rock
+          Rock Button
         </button>
         <button
           onClick={async () => {
+            console.log("Click rock");
             setCorrect(image.classification === "fossil");
             await classifyImage({
               imageId: image.id,

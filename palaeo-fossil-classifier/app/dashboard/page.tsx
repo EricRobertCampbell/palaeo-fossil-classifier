@@ -2,8 +2,6 @@
 import React from "react";
 import styles from "./page.module.css";
 import { useState } from "react";
-// import Admin from "../admin";
-// import Classify from "../classify";
 import Admin from "../upload/page";
 import Classify from "../classify/page";
 
@@ -22,9 +20,9 @@ export default function dashboard() {
 
   return (
     <div className={styles.grid}>
-      <div className={`${styles.base} ${styles.one}`}></div>
-      <div className={`${styles.base} ${styles.two}`}></div>
-      <div className={`${styles.base} ${styles.three}`}></div>
+      {/* <div className={`${styles.base} ${styles.one}`}></div> */}
+      {/* <div className={`${styles.base} ${styles.two}`}></div> */}
+      {/* <div className={`${styles.base} ${styles.three}`}></div> */}
       <div className={styles.area}>
         <nav className={styles.left}>
           <ul className="ul">
