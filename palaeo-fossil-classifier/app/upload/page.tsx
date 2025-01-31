@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import { uploadFile } from "../actions/uploadFile";
 import styles from "./page.module.css";
