@@ -42,3 +42,7 @@ npx drizzle-kit generate
 ```bash
 npx drizzle-kit migrate
 ```
+
+## Deployment
+
+-   [Instructions](https://fly.io/docs/launch/continuous-deployment-with-github-actions/)
