@@ -22,4 +22,4 @@ primary_region = 'sea'
   cpus = 1
 
 [deploy]
-  release_command = "cd palaeo-fossil-classifier && npx drizzle-kit migrate"
+  release_command = "npx drizzle-kit migrate"
