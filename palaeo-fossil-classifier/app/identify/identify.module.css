@@ -1,0 +1,24 @@
+/* NB This is not good - the global background should be set in the global css file, not just in each individual page */
+.identify {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Knockout", sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  background-color: #fff;
+  background-image: radial-gradient(at top left, #f0acb7, transparent),
+    radial-gradient(at top right, #ce3b51, transparent),
+    radial-gradient(at bottom left, #5f0404, transparent);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  padding: 7rem 3rem 3rem 3rem;
+}
+
+.identifyContentsContainer {
+  max-width: 600px;
+}

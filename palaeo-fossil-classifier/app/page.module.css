@@ -1,8 +1,7 @@
 @font-face {
-  font-family: 'Knockout';
+  font-family: "Knockout";
   src: url("./fonts/02_APompadourTextSample.otf");
 }
-
 
 .page {
   --gray-rgb: 0, 0, 0;
@@ -15,10 +14,10 @@
   justify-items: center;
   padding: 80px;
   gap: 64px;
-  font-family: 'Knockout', sans-serif;
+  font-family: "Knockout", sans-serif;
 }
 
-.header{
+.header {
   margin-top: 15rem;
   font-size: 5.75rem;
   text-align: center;
@@ -32,11 +31,10 @@
   background-color: transparent;
   cursor: pointer;
   border: 2px solid #8b0000;
-  overflow: hidden;
   border-radius: 30px;
   color: #8b0000;
   transition: all 0.5s ease-in-out;
-  font-family: 'knockout', sans-serif;
+  font-family: "knockout", sans-serif;
 }
 
 .btntxt {
@@ -86,13 +84,15 @@
   gap: 24px;
 }
 
-.content{
+.content {
   font-size: 2.5rem;
-text-align: center;}
+  text-align: center;
+}
 
 .hero {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/fossil.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/fossil.jpg");
   /* Set a specific height */
   height: 100vh;
 
@@ -101,16 +101,14 @@ text-align: center;}
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-@media screen and (max-width: 650px){
-  .header{
+@media screen and (max-width: 650px) {
+  .header {
     font-size: 3.75rem;
   }
-
 
   .btntxt {
     font-size: 1.25rem;
@@ -120,7 +118,7 @@ text-align: center;}
     margin-top: 10rem;
   }
 
-  .content{
+  .content {
     font-size: 1.25rem;
   }
   @-webkit-keyframes fade-in {
@@ -139,7 +137,6 @@ text-align: center;}
       opacity: 1;
     }
   }
-  
 }
 
 @-webkit-keyframes fade-in {

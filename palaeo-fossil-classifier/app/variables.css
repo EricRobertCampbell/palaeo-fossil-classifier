@@ -1,0 +1,8 @@
+/* TODO colours should be specified in terms of their hls and should be responsive to light / dark mode */
+:root {
+  --base-spacing: 4px;
+  --colour-primary: #ff0000;
+  --colour-secondary: #00ff00;
+  --colour-tertiary: #0000ff;
+  --colour-primary-text: #ffffff;
+}

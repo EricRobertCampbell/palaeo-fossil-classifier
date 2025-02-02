@@ -1,0 +1,29 @@
+.identifyNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(2 * var(--base-spacing));
+  & ol {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: calc(2 * var(--base-spacing));
+    gap: calc(2 * var(--base-spacing));
+    & li {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--color-text);
+      & a {
+        text-decoration: none;
+        color: var(--colour-primary-text);
+        transition: color 0.3s;
+        &:hover {
+          color: var(--colour-primary);
+        }
+      }
+    }
+  }
+}

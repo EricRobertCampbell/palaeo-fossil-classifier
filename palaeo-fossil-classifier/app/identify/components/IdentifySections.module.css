@@ -1,0 +1,30 @@
+.identifySection {
+  padding: calc(4 * var(--base-spacing));
+  & h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+}
+
+.floatLeft {
+  float: left;
+  margin-right: calc(1 * var(--base-spacing));
+}
+
+.floatRight {
+  float: right;
+  margin-left: calc(1 * var(--base-spacing));
+}
+
+.subsection {
+  margin-top: calc(2 * var(--base-spacing));
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: calc(2 * var(--base-spacing)) 0;
+}
