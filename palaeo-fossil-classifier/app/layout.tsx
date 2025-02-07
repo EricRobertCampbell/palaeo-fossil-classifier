@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "./variables.css";
-import "./embla.css";
 import Link from "next/link";
 import logo from "../public/logo.png";
 import Image from "next/image";
@@ -56,7 +55,7 @@ const NavComponent = () => {
       <ul className="list">
         {navComponents.map(({ title, href }) => {
           return (
-            <li>
+            <li key={title}>
               <Link href={href}>{title}</Link>
             </li>
           );

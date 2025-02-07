@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.36.4",
     "drizzle-kit": "^0.28.1",
-    "embla-carousel-react": "^8.5.2",
+    "drizzle-orm": "^0.36.4",
     "next": "^15.1.6",
     "pg": "^8.13.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-multi-carousel": "^2.8.5",
     "sharp": "^0.33.5"
   },
   "devDependencies": {

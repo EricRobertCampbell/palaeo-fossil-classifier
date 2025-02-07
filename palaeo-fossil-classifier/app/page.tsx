@@ -1,9 +1,6 @@
-"use client";
 import styles from "./page.module.css";
 import Link from "next/link";
-import useEmblaCarousel from "embla-carousel-react";
 export default function Home() {
-  const [emblaRef] = useEmblaCarousel();
   return (
     <div>
       <div className={styles.hero}>

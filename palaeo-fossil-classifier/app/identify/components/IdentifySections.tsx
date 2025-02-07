@@ -116,7 +116,11 @@ export const FragmentsSection = () => {
 
       <SubSection>
         <h4>Fragments</h4>
-        <Carousel />
+        <Carousel>
+          <p>first - 1</p>
+          <p>second - 2</p>
+          <p>third - 3</p>
+        </Carousel>
       </SubSection>
       <SubSection>
         <h4>Other Body Elements</h4>
