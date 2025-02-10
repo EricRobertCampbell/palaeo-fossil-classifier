@@ -10,6 +10,20 @@
     font-size: 3.75rem;
 }
 
+.imagecontainer{
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagepreview{
+  display: block;
+  margin: 1rem;
+  width: 20vw;
+  height: 20vh;
+}
 
 .form {
     background-color: #fff;
@@ -75,7 +89,7 @@
   #fileinput {
     width: 350px;
     max-width: 100%;
-    color: #444;
+    color: #44444400;
     padding: 2px;
     background: #fff;
     border-radius: 10px;

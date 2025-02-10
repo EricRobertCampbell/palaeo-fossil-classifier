@@ -13,11 +13,11 @@ export default function Home() {
                 Helping experts identifying fossils
               </p>
             </div>
-            <div className={styles.buttons}>
+            <div>
               <Link href="./login">
-                <button className={`${styles.button} ${styles.type1}`}>
-                  <span className={styles.btntxt}>Enter</span>
-                </button>{" "}
+                <button className={styles.button}>
+                  <span className={styles.span}>Enter</span>
+                </button>
               </Link>
             </div>
           </main>

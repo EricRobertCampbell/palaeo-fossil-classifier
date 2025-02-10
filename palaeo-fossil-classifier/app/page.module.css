@@ -25,52 +25,49 @@
 }
 
 .button {
-  height: 50px;
-  width: 200px;
-  position: relative;
-  background-color: transparent;
+  background: #fff;
+  color: var(--main);
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 120px;
+  text-transform: uppercase;
   cursor: pointer;
-  border: 2px solid #8b0000;
-  border-radius: 30px;
-  color: #8b0000;
-  transition: all 0.5s ease-in-out;
-  font-family: "knockout", sans-serif;
+  transform: skew(-21deg);
 }
 
-.btntxt {
-  z-index: 1;
-  font-weight: 800;
-  font-size: 1.75rem;
+.span {
+  display: inline-block;
+  transform: skew(21deg);
 }
 
-.type1::after {
-  content: "";
+.button::before {
+  content: '';
   position: absolute;
-  left: 0;
   top: 0;
-  transition: all 0.5s ease-in-out;
-  background-color: #8b0000;
-  border-radius: 30px;
-  visibility: hidden;
-  height: 10px;
-  width: 10px;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: var(--main);
+  opacity: 0;
   z-index: -1;
+  transition: all 0.5s;
 }
 
 .button:hover {
-  box-shadow: 1px 1px 200px #252525;
   color: #fff;
-  border: none;
-  z-index: 2;
 }
 
-.type1:hover::after {
-  visibility: visible;
-  transform: scale(100) translateX(2px);
+.button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
 }
 
 .main {
-  margin-top: 20rem;
+  margin-top: 15rem;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -139,19 +136,3 @@
   }
 }
 
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}

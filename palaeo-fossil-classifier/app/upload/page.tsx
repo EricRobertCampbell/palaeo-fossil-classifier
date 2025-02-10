@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState } from "react";
 import { uploadFile } from "../actions/uploadFile";
 import styles from "./page.module.css";
@@ -7,22 +7,57 @@ export default function Page() {
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
   };
+
+  const [image, setImage] = useState("");
+  const [submit, setSubmit] = useState(false);
+
+  const handleChange = () => {
+    setSubmit(true);
+  };
+
   return (
     <div>
-      <form className={styles.form} action={uploadFile}>
+      <form className={styles.form} action={uploadFile} onSubmit={handleChange}>
         <span className={styles.formtitle}>Upload your file</span>
-        <p className={styles.formparagraph}>File should be an image</p>
-        <label htmlFor="file-input" className={styles.dropcontainer}>
-          <span className={styles.droptitle}>Drop files here</span>
-          or
-          <input
-            type="file"
-            accept="image/*"
-            name="file"
-            required
-            className={styles.fileinput}
-          />
-        </label>
+        {image ? null : (
+          <label htmlFor="file-input" className={styles.dropcontainer}>
+            <p className={styles.formparagraph}>File should be an image</p>
+            <span className={styles.droptitle}>Drop files here</span>
+            or
+            <input
+              type="file"
+              accept="image/*"
+              name="file"
+              required
+              id={styles.fileinput}
+              onChange={(e) => {
+                if (e.target.files && e.target.files.length > 0) {
+                  setImage(URL.createObjectURL(e.target.files[0]));
+                }
+              }}
+            />
+          </label>
+        )}
+        {image && (
+          <div className={styles.imagecontainer}>
+            <img
+              className={styles.imagepreview}
+              src={image}
+              alt="Selected file preview"
+            />
+            <input
+              type="file"
+              accept="image/*"
+              name="file"
+              id={styles.fileinput}
+              onChange={(e) => {
+                if (e.target.files && e.target.files.length > 0) {
+                  setImage(URL.createObjectURL(e.target.files[0]));
+                }
+              }}
+            />
+          </div>
+        )}
         <div className={styles.mydict}>
           <h2 className={styles.formtitle2}>Classification</h2>
           <div>
@@ -37,14 +72,20 @@ export default function Page() {
           </div>
         </div>
         <button className={styles.btn}>Submit</button>
-        <div>
-          <div className={styles.loader}>
-            <div className={`${styles.circle} ${styles.circle1}`}></div>
-            <div className={`${styles.circle} ${styles.circle2}`}></div>
-            <div className={`${styles.circle} ${styles.circle3}`}></div>
-            <div className={`${styles.circle} ${styles.circle4}`}></div>
+        {!submit ? (
+          <div>
+            <div className={styles.loader}>
+              <div className={`${styles.circle} ${styles.circle1}`}></div>
+              <div className={`${styles.circle} ${styles.circle2}`}></div>
+              <div className={`${styles.circle} ${styles.circle3}`}></div>
+              <div className={`${styles.circle} ${styles.circle4}`}></div>
+            </div>
           </div>
-        </div>
+        ) : (
+          <p className={styles.formtitle2}>
+            Congrats your image has been uploaded!
+          </p>
+        )}
       </form>
     </div>
   );
