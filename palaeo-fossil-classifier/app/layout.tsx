@@ -5,6 +5,9 @@ import "./variables.css";
 import Link from "next/link";
 import logo from "../public/logo.png";
 import Image from "next/image";
+import { Providers } from "./components/Providers";
+import { UserMenuButton } from "./components/UserMenuButton";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,15 +35,11 @@ const navComponents = [
     href: "/dashboard",
   },
   {
-    title: "Login",
-    href: "/login",
-  },
-  {
     title: "Register",
     href: "/register",
   },
 ];
-const NavComponent = () => {
+const NavComponent = async () => {
   return (
     <nav className="nav">
       <Link href={"/"}>
@@ -62,6 +61,7 @@ const NavComponent = () => {
         })}
       </ul>
       <button className="menu">Menu</button>
+      <UserMenuButton />
     </nav>
   );
 };
@@ -74,8 +74,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <NavComponent />
-        {children}
+        <Providers>
+          <NavComponent />
+          {children}
+        </Providers>
       </body>
     </html>
   );

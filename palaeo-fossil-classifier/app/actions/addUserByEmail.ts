@@ -2,22 +2,17 @@
 
 import { db } from "@/db";
 import { usersTable } from "@/db/schema";
-import { hash } from "bcrypt";
 
-export const addUser = async (f: FormData) => {
-	console.log("in adduser");
-	const email = f.get("email");
-	if (!email || typeof email !== "string") {
+/**
+ * Add a user by email. Only by email, so this should usually only be used to create a user in the db when they log in using oath
+ */
+export const addUserByEmail = async ({ email }: { email: string }) => {
+	console.log("in addUserByEmail");
+	if (!email) {
 		throw new Error("Invalid email");
 	}
-	const password = f.get("password");
-	if (!password || typeof password !== "string") {
-		throw new Error("Invalid password");
-	}
-	const hashedPassword = await hash(password, 10);
 	const user = {
 		email,
-		password: hashedPassword,
 	};
 	console.log({ user });
 	const [createdUser] = await db.insert(usersTable).values(user).returning({

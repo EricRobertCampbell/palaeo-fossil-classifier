@@ -15,6 +15,13 @@
       "when": 1733006533196,
       "tag": "0001_silky_silver_fox",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1740256589005,
+      "tag": "0002_zippy_otto_octavius",
+      "breakpoints": true
     }
   ]
 }

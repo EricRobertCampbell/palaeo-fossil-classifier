@@ -7,7 +7,7 @@ import {
   FragmentsSection,
 } from "./components/IdentifySections";
 
-export default function Identify() {
+export default async function Identify() {
   return (
     <IdentifyContainer>
       <IdentifyContentsContainer>
@@ -15,7 +15,7 @@ export default function Identify() {
         <p>
           When starting out, it can be challenging to separate rocks from
           fossils, let alone identify which fossils you've found! However, as
-          you become more proficient you will probably start to recognize
+          pre become more proficient you will probably start to recognize
           certain fossils which are common to the different samples. Below you
           can find some examples of common fossils found in the Eocene Cypress
           Hills Formation and some diagnostic criteria to help you identify

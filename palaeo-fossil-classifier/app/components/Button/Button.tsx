@@ -4,7 +4,7 @@ import styles from "./button.module.css";
 interface ButtonProps extends ButtonHTMLAttributes<{}>, PropsWithChildren {}
 export const Button = ({ children, className, ...rest }: ButtonProps) => {
   return (
-    <button className={[className, styles.button].join(" ")} {...rest}>
+    <button className={[styles.button, className].join(" ")} {...rest}>
       {children}
     </button>
   );

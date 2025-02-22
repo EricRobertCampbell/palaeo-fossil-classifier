@@ -1,10 +1,18 @@
+import { uniqueIndex } from "drizzle-orm/mysql-core";
 import { integer, pgTable, varchar } from "drizzle-orm/pg-core";
+import { lower } from "./utility";
 
-export const usersTable = pgTable("users", {
-	id: integer().primaryKey().generatedByDefaultAsIdentity(),
-	email: varchar({ length: 255 }).notNull().unique(),
-	password: varchar({ length: 255 }).notNull().default("password"),
-});
+export const usersTable = pgTable(
+	"users",
+	{
+		id: integer().primaryKey().generatedByDefaultAsIdentity(),
+		email: varchar({ length: 255 }).notNull().unique(),
+		password: varchar({ length: 255 }), // might be null if user signed up with oauth
+	},
+	(table) => {
+		return [uniqueIndex("emailUniqueIndex").on(lower(table.email))];
+	}
+);
 
 export const imagesTable = pgTable("images", {
 	id: integer().primaryKey().generatedByDefaultAsIdentity(),

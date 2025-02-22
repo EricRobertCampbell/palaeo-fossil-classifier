@@ -25,7 +25,11 @@ docker pull postgres
 docker run --name palaeo-fossil-classifier-db -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
 ```
 
-(NOTE: make sure that the password and the post in the command above match the DATABASE_URL in the .env file)
+(NOTE: make sure that the password and the port in the command above match the DATABASE_URL in the .env file)
+
+```
+DATABASE_URL=postgres://postgres:mysecretpassword@localhost:5432/postgres
+```
 
 You also need to create the database and run the migrations
 
