@@ -31,22 +31,26 @@ providers.push(
 		// e.g. domain, username, password, 2FA token, etc.
 		// You can pass any HTML attribute to the <input> tag through the object.
 		credentials: {
-			username: {
-				label: "Username",
-				type: "text",
-				placeholder: "jsmith",
+			email: {
+				required: true,
+				label: "Email",
+				type: "email",
+				placeholder: "jsmith@example.com",
 			},
-			password: { label: "Password", type: "password" },
+			password: { label: "Password", type: "password", required: true },
 		},
 		async authorize(credentials, req) {
 			// Add logic here to look up the user from the credentials supplied
 			console.log({ credentials });
 			console.log({ req });
-			if (!credentials?.username || !credentials?.password) {
+			if (!credentials?.email || !credentials?.password) {
 				// If you return null then an error will be displayed advising the user to check their details.
+				console.log("No credentials", credentials);
 				return null;
 			}
-			const res = await fetch(`${getCanonicalUrl()}/api/login`, {
+			const loginUrl = `${getCanonicalUrl()}/api/login`;
+			console.log({ loginUrl });
+			const res = await fetch(loginUrl, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

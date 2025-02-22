@@ -6,6 +6,7 @@ import { hash } from "bcrypt";
 
 export const addUser = async (f: FormData) => {
 	console.log("in adduser");
+	const userName = f.get("username");
 	const email = f.get("email");
 	if (!email || typeof email !== "string") {
 		throw new Error("Invalid email");
@@ -18,6 +19,7 @@ export const addUser = async (f: FormData) => {
 	const user = {
 		email,
 		password: hashedPassword,
+		username: userName,
 	};
 	console.log({ user });
 	const [createdUser] = await db.insert(usersTable).values(user).returning({

@@ -6,6 +6,7 @@ export const usersTable = pgTable(
 	"users",
 	{
 		id: integer().primaryKey().generatedByDefaultAsIdentity(),
+		name: varchar({ length: 255 }),
 		email: varchar({ length: 255 }).notNull().unique(),
 		password: varchar({ length: 255 }), // might be null if user signed up with oauth
 	},
