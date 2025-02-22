@@ -33,7 +33,7 @@
 .title{
     text-align: center;
     padding-top: 3rem;
-    color: #8b0000;
+    color: var(--secondary);
     font-family: 'Knockout', sans-serif;
     z-index: 2;
     font-size: 5.75rem;

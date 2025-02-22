@@ -28,7 +28,7 @@ export default function dashboard() {
           <ul className="ul">
             <li className="">
               <button
-                className={styles.button}
+                className={!component1 ? styles.button : styles.button1}
                 onClick={() => {
                   handleAdmin();
                 }}
@@ -38,7 +38,7 @@ export default function dashboard() {
             </li>
             <li className="">
               <button
-                className={styles.button}
+                className={!component2 ? styles.button : styles.button1}
                 onClick={() => {
                   handleClasify();
                 }}
