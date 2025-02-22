@@ -32,7 +32,7 @@ export default function Classify() {
 
 function ClassifyImage({ image, onImageSelection }) {
   const [base64, setBase64] = useState("");
-  const [correct, setCorrect] = useState<undefined | number>(0);
+  const [correct, setCorrect] = useState<undefined | boolean>();
   const user = { id: 1 };
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function ClassifyImage({ image, onImageSelection }) {
   }, [image.id]);
 
   useEffect(() => {
-    setCorrect(0);
+    setCorrect(undefined);
   }, [image.id]);
 
   if (base64) {
@@ -53,13 +53,17 @@ function ClassifyImage({ image, onImageSelection }) {
         key={image.id}
         style={{
           backgroundColor:
-            correct === 0 ? "#FFFFFF" : correct === 1 ? "#20c997" : "#dc3545",
+            correct === true
+              ? "#20c997"
+              : correct === false
+              ? "#dc3545"
+              : "#FFFFFF",
           boxShadow:
-            correct === 0
-              ? "0 10px 60px rgb(218, 229, 255)"
-              : correct === 1
+            correct === true
               ? "0 10px 60px #20c997"
-              : "0 10px 60px rgb(148, 6, 21)",
+              : correct === false
+              ? "0 10px 60px rgb(148, 6, 21)"
+              : "0 10px 60px rgb(218, 229, 255)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -72,33 +76,23 @@ function ClassifyImage({ image, onImageSelection }) {
           alt={"testing"}
           className={styles.image}
         />
-        {correct === 1 ? (
-          <p
-            style={{
-              marginTop: "10px",
-            }}
-          >
-            Correct!
-          </p>
-        ) : correct === 2 ? (
-          <p
-            style={{
-              marginTop: "10px",
-            }}
-          >
-            Incorrect!
-          </p>
-        ) : null}
+        <p
+          style={{
+            marginTop: "10px",
+          }}
+        >
+          {correct === true
+            ? "Correct!"
+            : correct === false
+            ? "Incorrect!"
+            : ""}
+        </p>
         <div className={styles.group}>
           <button
             className={styles.button}
             onClick={async () => {
               console.log("Click rock");
-              if (image.classification === "rock") {
-                setCorrect(1);
-              } else {
-                setCorrect(2);
-              }
+              setCorrect(image.classification === "rock");
               await classifyImage({
                 imageId: image.id,
                 userId: user.id,
@@ -112,12 +106,8 @@ function ClassifyImage({ image, onImageSelection }) {
           <button
             className={styles.button}
             onClick={async () => {
-              console.log("Click rock");
-              if (image.classification === "fossil") {
-                setCorrect(1);
-              } else {
-                setCorrect(2);
-              }
+              console.log("Click fossil");
+              setCorrect(image.classification === "fossil");
               await classifyImage({
                 imageId: image.id,
                 userId: user.id,
@@ -131,5 +121,7 @@ function ClassifyImage({ image, onImageSelection }) {
         </div>
       </div>
     );
+  } else {
+    return null;
   }
 }

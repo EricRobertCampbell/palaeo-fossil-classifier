@@ -3,6 +3,10 @@
   --foreground: #171717;
   --main: #8b0000;
   --secondary: #f0acb7;
+  --border-rad-med: 20px;
+  --font-small: 1rem;
+  --font-med:1.125rem;
+  --padding-med: 10px;
 }
 
 @media (prefers-color-scheme: dark) {

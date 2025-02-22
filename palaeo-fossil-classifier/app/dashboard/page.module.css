@@ -36,7 +36,7 @@
 
 .button {
     width: 70%;
-    font-size: 18px;
+    font-size: var(--font-med);
     letter-spacing: 2px;
     text-transform: uppercase;
     display: inline-block;
@@ -57,7 +57,7 @@
   
   .button1, .button:hover {
     width: 70%;
-    font-size: 18px;
+    font-size: var(--font-med);
     letter-spacing: 2px;
     text-transform: uppercase;
     display: inline-block;
@@ -144,6 +144,11 @@
 
 @media screen and (max-width: 600px)  {
   .button{
+    font-size: 8px;
+    padding-left: 0.5rem;
+  }
+
+  .button:hover, .button1{
     font-size: 8px;
     padding-left: 0.5rem;
   }

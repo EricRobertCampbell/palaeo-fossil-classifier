@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { uploadFile } from "../actions/uploadFile";
 import styles from "./page.module.css";
+import { Button } from "../components/Button";
 export default function Page() {
   const [selectedOption, setSelectedOption] = useState("all");
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,6 +34,7 @@ export default function Page() {
               onChange={(e) => {
                 if (e.target.files && e.target.files.length > 0) {
                   setImage(URL.createObjectURL(e.target.files[0]));
+                  console.log(e);
                 }
               }}
             />
@@ -71,7 +73,9 @@ export default function Page() {
             </label>
           </div>
         </div>
-        <button className={styles.btn}>Submit</button>
+        <Button className="">
+          <div>Submit</div>
+        </Button>
         {!submit ? (
           <div>
             <div className={styles.loader}>

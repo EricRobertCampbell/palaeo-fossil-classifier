@@ -1,12 +1,11 @@
 .form {
-    background-color: #fff;
+    background-color: var(--background);
     box-shadow: 0 10px 60px rgb(218, 229, 255);
     border: 1px solid rgb(159, 159, 160);
-    border-radius: 20px;
+    border-radius: var(--border-rad-med);
     text-align: center;
-    font-size: 1.125rem;
+    font-size: var(--font-med);
     width: 60vw;
-    max-width: 875px;
     height: 80vh;
     z-index: 5;
     position: relative;
@@ -26,11 +25,11 @@
     background-color: var(--main);
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: var(--font-small);
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
