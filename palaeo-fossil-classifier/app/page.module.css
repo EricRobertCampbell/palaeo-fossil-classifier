@@ -21,7 +21,7 @@
   margin-top: 15rem;
   font-size: 5.75rem;
   text-align: center;
-  color: #8b0000;
+  color: #fa0505;
 }
 
 .button {
@@ -30,9 +30,10 @@
   position: relative;
   background-color: transparent;
   cursor: pointer;
-  border: 2px solid #8b0000;
+  border: 2px solid #fa0505;
   border-radius: 30px;
-  color: #8b0000;
+  /* color: #8b0000; */
+  color: #fa0505;
   transition: all 0.5s ease-in-out;
   font-family: "knockout", sans-serif;
 }
@@ -44,17 +45,17 @@
 }
 
 .type1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: all 0.5s ease-in-out;
-  background-color: #8b0000;
-  border-radius: 30px;
-  visibility: hidden;
-  height: 10px;
-  width: 10px;
-  z-index: -1;
+  /* content: ""; */
+  /* position: absolute; */
+  /* left: 0; */
+  /* top: 0; */
+  /* transition: all 0.5s ease-in-out; */
+  /* background-color: #8b0000; */
+  /* border-radius: 30px; */
+  /* visibility: hidden; */
+  /* height: 10px; */
+  /* width: 10px; */
+  /* z-index: -1; */
 }
 
 .button:hover {
@@ -87,11 +88,12 @@
 .content {
   font-size: 2.5rem;
   text-align: center;
+  color: #fa0505;
 }
 
 .hero {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../public/fossil.jpg");
   /* Set a specific height */
   height: 100vh;
